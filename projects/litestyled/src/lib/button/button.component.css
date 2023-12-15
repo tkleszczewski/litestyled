@@ -5,40 +5,46 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  background-color: transparent;
+  font-weight: 600;
+  box-sizing: border-box;
 }
 
-/* VARIANTS */
-.ls-button--variant-default {
-  background-color: rgb(99, 99, 110);
-  &:hover {
-    background-color: rgb(57, 57, 63);
-  }
-  color: #fff;
+/* COLORS */
+.ls-button--color-default {
+  --color-background: rgb(99, 99, 110);
+  --color-background-hover: rgb(57, 57, 63);
+  --color-font: #fff;
 }
 
-.ls-button--variant-primary {
-  background-color: rgb(0, 120, 255);
-  &:hover {
-    background-color: rgb(0, 101, 216);
-  }
-  color: #fff;
+.ls-button--color-primary {
+  --color-background: rgb(0, 120, 255);
+  --color-background-hover: rgb(0, 101, 216);
+  --color-font: #fff;
 }
 
-.ls-button--variant-secondary {
-  background-color: rgb(162, 0, 255);
-  &:hover {
-    background-color: rgb(130, 0, 216);
-  }
-  color: #fff;
+.ls-button--color-secondary {
+  --color-background: rgb(0, 255, 179);
+  --color-background-hover: rgb(0, 201, 140);
+  --color-font: #000;
 }
 
-.ls-button--variant-success {
+.ls-button--color-success {
+  --color-background: rgb(0, 201, 50);
+  --color-background-hover: rgb(0, 180, 45);
+  --color-font: #fff;
 }
 
-.ls-button--variant-warning {
+.ls-button--color-warning {
+  --color-background: rgb(236, 221, 0);
+  --color-background-hover: rgb(202, 189, 0);
+  --color-font: #000;
 }
 
-.ls-button--variant-danger {
+.ls-button--color-danger {
+  --color-background: rgb(255, 0, 55);
+  --color-background-hover: rgb(226, 0, 49);
+  --color-font: #fff;
 }
 
 /* SIZES */
@@ -52,4 +58,26 @@
 
 .ls-button--size-large {
   padding: 10px 20px;
+}
+
+/* VARIANTS */
+.ls-button--variant-default {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-background);
+  color: var(--color-font);
+}
+
+.ls-button--variant-default:hover {
+  background-color: var(--color-background-hover);
+  border: 2px solid var(--color-background-hover);
+}
+
+.ls-button--variant-outlined {
+  color: var(--color-background);
+  border: 2px solid var(--color-background);
+}
+
+.ls-button--variant-outlined:hover {
+  color: var(--color-font);
+  background-color: var(--color-background);
 }

@@ -1,5 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { LitestyledButtonSize, LitestyledButtonVariant } from './button.types';
+import {
+  LitestyledButtonSize,
+  LitestyledButtonSizes,
+  LitestyledButtonVariant,
+  LitestyledButtonVariants,
+  LitestyledButtonColor,
+  LitestyledButtonColors,
+} from './button.types';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -11,30 +18,33 @@ import { NgClass } from '@angular/common';
 })
 export class LitestyledButtonComponent {
   @Input()
-  variant: LitestyledButtonVariant = LitestyledButtonVariant.DEFAULT;
+  color: LitestyledButtonColor = LitestyledButtonColors.DEFAULT;
 
   @Input()
-  size: LitestyledButtonSize = LitestyledButtonSize.DEFAULT;
+  variant: LitestyledButtonVariant = LitestyledButtonVariants.DEFAULT;
+
+  @Input()
+  size: LitestyledButtonSize = LitestyledButtonSizes.DEFAULT;
 
   getClasses() {
     return {
+      // COLORS
+      'ls-button--color-default': this.color === LitestyledButtonColors.DEFAULT,
+      'ls-button--color-primary': this.color === LitestyledButtonColors.PRIMARY,
+      'ls-button--color-secondary':
+        this.color === LitestyledButtonColors.SECONDARY,
+      'ls-button--color-success': this.color === LitestyledButtonColors.SUCCESS,
+      'ls-button--color-warning': this.color === LitestyledButtonColors.WARNING,
+      'ls-button--color-danger': this.color === LitestyledButtonColors.DANGER,
+      // SIZES
+      'ls-button--size-default': this.size === LitestyledButtonSizes.DEFAULT,
+      'ls-button--size-small': this.size === LitestyledButtonSizes.SMALL,
+      'ls-button--size-large': this.size === LitestyledButtonSizes.LARGE,
       // VARIANTS
       'ls-button--variant-default':
-        this.variant === LitestyledButtonVariant.DEFAULT,
-      'ls-button--variant-primary':
-        this.variant === LitestyledButtonVariant.PRIMARY,
-      'ls-button--variant-secondary':
-        this.variant === LitestyledButtonVariant.SECONDARY,
-      'ls-button--variant-success':
-        this.variant === LitestyledButtonVariant.SUCCESS,
-      'ls-button--variant-warning':
-        this.variant === LitestyledButtonVariant.WARNING,
-      'ls-button--variant-danger':
-        this.variant === LitestyledButtonVariant.DANGER,
-      // SIZES
-      'ls-button--size-default': this.size === LitestyledButtonSize.DEFAULT,
-      'ls-button--size-small': this.size === LitestyledButtonSize.SMALL,
-      'ls-button--size-large': this.size === LitestyledButtonSize.LARGE,
+        this.variant === LitestyledButtonVariants.DEFAULT,
+      'ls-button--variant-outlined':
+        this.variant === LitestyledButtonVariants.OUTLINED,
     };
   }
 }
