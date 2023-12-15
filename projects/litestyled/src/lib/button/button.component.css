@@ -1,0 +1,55 @@
+.ls-button {
+  transition-property: all;
+  transition-timing-function: ease-out;
+  transition-duration: 140ms;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* VARIANTS */
+.ls-button--variant-default {
+  background-color: rgb(99, 99, 110);
+  &:hover {
+    background-color: rgb(57, 57, 63);
+  }
+  color: #fff;
+}
+
+.ls-button--variant-primary {
+  background-color: rgb(0, 120, 255);
+  &:hover {
+    background-color: rgb(0, 101, 216);
+  }
+  color: #fff;
+}
+
+.ls-button--variant-secondary {
+  background-color: rgb(162, 0, 255);
+  &:hover {
+    background-color: rgb(130, 0, 216);
+  }
+  color: #fff;
+}
+
+.ls-button--variant-success {
+}
+
+.ls-button--variant-warning {
+}
+
+.ls-button--variant-danger {
+}
+
+/* SIZES */
+.ls-button--size-default {
+  padding: 8px 16px;
+}
+
+.ls-button--size-small {
+  padding: 6px 12px;
+}
+
+.ls-button--size-large {
+  padding: 10px 20px;
+}
