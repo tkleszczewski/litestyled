@@ -85,6 +85,11 @@
   background-color: var(--color-background);
 }
 
+.ls-button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .ls-button__ripple {
   position: absolute;
   left: 50%;

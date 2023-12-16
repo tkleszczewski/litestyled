@@ -20,6 +20,9 @@ export class LitestyledButtonComponent {
   @Input('style')
   buttonStyles: { [klass: string]: any } = {};
 
+  @Input('disabled')
+  isButtonDisabled: boolean = false;
+
   @Input()
   color: LitestyledButtonColor = LitestyledButtonColors.DEFAULT;
 
@@ -55,6 +58,7 @@ export class LitestyledButtonComponent {
         this.variant === LitestyledButtonVariants.DEFAULT,
       'ls-button--variant-outlined':
         this.variant === LitestyledButtonVariants.OUTLINED,
+      'ls-button--disabled': this.isButtonDisabled,
     };
   }
 

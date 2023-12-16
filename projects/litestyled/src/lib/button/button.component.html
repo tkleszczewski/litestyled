@@ -1,9 +1,9 @@
 <button
-  #button
   class="ls-button"
   [ngClass]="getClasses()"
   [style]="buttonStyles"
   (click)="handleClick()"
+  [disabled]="isButtonDisabled"
 >
   <div
     class="ls-button__ripple"
