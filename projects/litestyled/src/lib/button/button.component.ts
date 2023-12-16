@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import {
   LitestyledButtonSize,
   LitestyledButtonSizes,
@@ -7,16 +7,19 @@ import {
   LitestyledButtonColor,
   LitestyledButtonColors,
 } from './button.types';
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'litestyled-button',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgIf],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css',
 })
 export class LitestyledButtonComponent {
+  @Input('style')
+  buttonStyles: { [klass: string]: any } = {};
+
   @Input()
   color: LitestyledButtonColor = LitestyledButtonColors.DEFAULT;
 
@@ -25,6 +28,13 @@ export class LitestyledButtonComponent {
 
   @Input()
   size: LitestyledButtonSize = LitestyledButtonSizes.DEFAULT;
+
+  @Input()
+  rippleDuration: number = 300;
+
+  rippleActive: boolean = false;
+
+  constructor() {}
 
   getClasses() {
     return {
@@ -46,5 +56,12 @@ export class LitestyledButtonComponent {
       'ls-button--variant-outlined':
         this.variant === LitestyledButtonVariants.OUTLINED,
     };
+  }
+
+  handleClick() {
+    this.rippleActive = true;
+    setTimeout(() => {
+      this.rippleActive = false;
+    }, this.rippleDuration);
   }
 }

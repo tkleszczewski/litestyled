@@ -45,3 +45,19 @@
     >button</litestyled-button
   >
 </div>
+<h2>WITH CUSTOM STYLE</h2>
+<div class="display-container">
+  <litestyled-button
+    [style]="{ color: 'orange', paddingLeft: '100px' }"
+    variant="outlined"
+    size="large"
+    >button</litestyled-button
+  >
+  <litestyled-button
+    [style]="{ backgroundColor: 'pink' }"
+    class="some-class"
+    variant="outlined"
+    size="large"
+    >button</litestyled-button
+  >
+</div>

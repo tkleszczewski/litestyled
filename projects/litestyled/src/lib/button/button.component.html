@@ -1,3 +1,14 @@
-<button class="ls-button" [ngClass]="getClasses()">
+<button
+  #button
+  class="ls-button"
+  [ngClass]="getClasses()"
+  [style]="buttonStyles"
+  (click)="handleClick()"
+>
+  <div
+    class="ls-button__ripple"
+    *ngIf="rippleActive"
+    [style.animationDuration]="rippleDuration + 'ms'"
+  ></div>
   <ng-content></ng-content>
 </button>
