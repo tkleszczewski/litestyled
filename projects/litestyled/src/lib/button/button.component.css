@@ -11,13 +11,21 @@
   font-family: var(--font-main);
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* COLORS */
 .ls-button--color-default {
   --color-background: rgb(99, 99, 110);
   --color-background-hover: rgb(57, 57, 63);
+  --color-background-outlined: #fff;
+  --color-background-outlined-hover: rgb(99, 99, 110);
   --color-font: #fff;
+  --color-font-hover: #fff;
+  --color-font-outlined: rgb(99, 99, 110);
+  --color-font-outlined-hover: #fff;
 }
 
 .ls-button--color-primary {
@@ -73,16 +81,19 @@
 .ls-button--variant-default:hover {
   background-color: var(--color-background-hover);
   border: 2px solid var(--color-background-hover);
+  color: var(--color-font);
 }
 
 .ls-button--variant-outlined {
-  color: var(--color-background);
-  border: 2px solid var(--color-background);
+  background-color: var(--color-background-outlined);
+  border: 2px solid var(--color-font-outlined);
+  color: var(--color-font-outlined);
 }
 
 .ls-button--variant-outlined:hover {
-  color: var(--color-font);
-  background-color: var(--color-background);
+  background-color: var(--color-background-outlined-hover);
+  border: 2px solid var(--color-background-outlined-hover);
+  color: var(--color-font-outlined-hover);
 }
 
 .ls-button--disabled {

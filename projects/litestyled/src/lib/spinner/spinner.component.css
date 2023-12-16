@@ -1,0 +1,62 @@
+.ls-spinner-container {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.ls-spinner {
+}
+
+.ls-spinner--variant-default {
+  --color-spinner: #000;
+
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-spinner);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+:host-context(
+    button[class^="ls-button--color"],
+    button[class*=" ls-button--color"]
+  )
+  .ls-spinner {
+  --color-spinner: var(--color-font);
+}
+
+:host-context(
+    button[class^="ls-button--color"],
+    button[class*=" ls-button--color"]
+  )
+  .ls-spinner {
+  --color-spinner: var(--color-font);
+}
+
+:host-context(
+    button[class^="ls-button--variant-outlined"],
+    button[class*=" ls-button--variant-outlined"]
+  )
+  .ls-spinner {
+  --color-spinner: var(--color-font-outlined);
+}
+
+:host-context(
+    button[class^="ls-button--variant-outlined"]:hover,
+    button[class*=" ls-button--variant-outlined"]:hover
+  )
+  .ls-spinner {
+  --color-spinner: var(--color-font-outlined-hover);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
